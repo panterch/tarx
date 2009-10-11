@@ -1,0 +1,27 @@
+- content_for :title, object.display_name
+
+%p
+  Person
+  != object.display_name
+
+- if object.parent
+  %p
+    Parent:
+    != link_to(object.parent.display_name, object.parent)
+
+%p
+  Children:
+  - object.children.each do |c|
+    != link_to(c.display_name, c)
+
+%p
+  Near Sibling:
+  - object.near_siblings.each do |s|
+    != link_to(s.display_name, s)
+
+%hr
+
+%form#code_form
+  != text_field_tag :code_input, object.code
+  != submit_tag 'Search'
+  

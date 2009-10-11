@@ -21,5 +21,5 @@ def create_children(parent, level, cnt)
 end
 
 parent = Person.create!(:name => Faker::Name.name, :code => CODES[0])
-create_children(parent, LEVELS, 1)
+create_children(parent, LEVELS, 0)
 

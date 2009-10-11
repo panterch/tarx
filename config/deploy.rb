@@ -6,7 +6,6 @@ role :db,  "tarx.panter.ch", :primary => true
 set :rails_env, 'production'
 
 set :deploy_via, :remote_cache
-set :git_enable_submodules, 1
 set :scm, :git
 set :repository,  "git@github.com:panter/tarx.git"
 set :ssh_options, {:forward_agent => true}
